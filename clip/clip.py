@@ -21,7 +21,12 @@ _MODELS = {
 }
 
 
-def _download(url: str, root: str = os.path.expanduser("~/.cache/clip")):
+def _download(url: str, root: str = None):
+    if root is None: 
+        if 'VI_MODEL_PATH' in os.environ.keys():
+            root = os.environ['VI_MODEL_PATH']
+        else:
+            root = os.path.expanduser("~/.cache/clip")
     os.makedirs(root, exist_ok=True)
     filename = os.path.basename(url)
 
