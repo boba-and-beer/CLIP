@@ -15,7 +15,7 @@ package_data.extend([str(x) for x in list(Path('clip').rglob("*.md"))])
 
 setup(
     name='clip_by_openai',
-    version='0.1.1.3',
+    version='0.1.1.5',
     author="OpenAI",
     author_email="",
     description="CLIP by OpenAI",
